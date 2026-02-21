@@ -1,0 +1,34 @@
+{
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "[go.mod]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "golang.go"
+  },
+
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+
+  "go.formatTool": "gofmt",
+  "go.toolsManagement.autoUpdate": true,
+
+  // Prefer project-local Go toolchain when present
+  "go.goroot": "${workspaceFolder}/.tools/go",
+
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false
+}

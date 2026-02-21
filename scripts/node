@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+LOCAL_NODE="${ROOT_DIR}/.tools/node/bin/node"
+
+if [[ -x "${LOCAL_NODE}" ]]; then
+  exec "${LOCAL_NODE}" "$@"
+fi
+
+exec node "$@"

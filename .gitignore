@@ -1,0 +1,38 @@
+# Go
+/bin/
+/dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Logs
+*.log
+
+# Local env
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Tooling
+.coverage/
+*.coverprofile
+
+# Local toolchains (kept out of git)
+.tools/
+
+# Embedded build artifacts (copied from Web/dist during build)
+internal/web/dist/

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+NODE_HOME="${ROOT_DIR}/.tools/node"
+LOCAL_NPX="${NODE_HOME}/bin/npx"
+
+if [[ -x "${LOCAL_NPX}" ]]; then
+  # npx uses /usr/bin/env node; ensure our local node is on PATH.
+  PATH="${NODE_HOME}/bin:${PATH}"
+  export PATH
+  exec "${LOCAL_NPX}" "$@"
+fi
+
+exec npx "$@"

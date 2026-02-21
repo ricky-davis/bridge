@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+NODE_HOME="${ROOT_DIR}/.tools/node"
+LOCAL_NPM="${NODE_HOME}/bin/npm"
+
+if [[ -x "${LOCAL_NPM}" ]]; then
+  # npm uses /usr/bin/env node; ensure our local node is on PATH.
+  PATH="${NODE_HOME}/bin:${PATH}"
+  export PATH
+  exec "${LOCAL_NPM}" "$@"
+fi
+
+exec npm "$@"
